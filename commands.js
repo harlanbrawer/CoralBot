@@ -15,7 +15,7 @@ const commands = {
 module.exports = async function(msg) {
     console.log(msg.content);
     // msg.reply('Reply to message');
-    if (msg.channel.id === process.env.TESTCHANNELID || true) {
+    if (true) {
         let tokens = msg.content.split(' ');
         let command = tokens.shift();
         if (command.charAt(0) === "!") {
