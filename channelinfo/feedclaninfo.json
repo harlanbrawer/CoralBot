@@ -1,0 +1,15 @@
+{
+    "info": {
+        "name": "Feedclan",
+        "id": "433121042953928706",
+        "general": "433121042953928710",
+        "bottest": "848990351650062376"
+    },
+    "settings": {
+        "sentencetriggers": false,
+        "wordtriggers": false,
+        "nonepiece": false,
+        "gifs": false,
+        "lobby": false
+    }
+}
