@@ -2,7 +2,7 @@
 const fetch = require('node-fetch');
 
 module.exports = async function (msg, args) {
-    if (args.length <= 0) {
+    if (args.length <= 1) {
         msg.channel.send("Usage: !gif {search_term}");
         return;
     }
