@@ -1,0 +1,29 @@
+CoralBot is a multipurpose bot for personal discord server use.
+
+Commands: !test, !gif, !set, !remember/!rem, !recall/!rec, !help
+
+Usage:
+!test
+Send bot test message
+
+!gif {gif search terms}
+Sends a gif resulting from searching the {gif search terms}
+
+!set
+Prints out settings for a channel
+!set {setting} {true/false}
+Sets a setting for a channel
+
+!remember/!rem {optional: "me"} {note category} {note}
+Stores the {note} in the {note category} for future recall using the !recall command.
+If "me" is put after !remember, then the note will be stored in a user specific note, otherwise
+it will be stored in a serverwide note.
+
+!recall/!rec {optional: me} {category or "all"}
+Prints out all of the notes for the category that were set with the !remember command.
+If "me" is put after !recall then the notes are printed from your user-specific notes,
+otherwise they come from the serverwide notes.
+You can use "all" instead of {category} to print out all categories.
+
+!help
+Print out this help message.
