@@ -18,13 +18,21 @@ const commands = {
     test, gif, set, remember, rem, recall, rec, help
 };
 
+let prefix = 'c!';
+
 // message handler
 module.exports = async function(msg) {
     console.log(msg.content);
+    if (command.substring(0,2) !== prefix) {
+        return;
+    }
     let serverInfoString;
     try {
         serverInfoString = fs.readFileSync('./channelinfo/' + msg.guild.id + "info.json", 'utf8');
     } catch(err) {
+        if (!fs.existsSync('./channelinfo')) {
+            fs.mkdirSync('./channelinfo');
+        }
         serverInfoString = JSON.stringify(getBlankChannelJson(msg.guild));
         fs.writeFile('./channelinfo/' + msg.guild.id + "info.json", serverInfoString, (err) => {});
     }
@@ -32,15 +40,16 @@ module.exports = async function(msg) {
 
     let tokens = msg.content.split(' ');
     let command = tokens[0];
-    if (serverInfo.settings.fullenable === true || tokens[0] === '!set')
-        if (command.charAt(0) === "!") {
-            command = command.substring(1);
+    if (serverInfo.settings.fullenable === true || tokens[0] === prefix + 'set')
+        if (command.substring(0,2) === prefix) {
+            command = command.substring(2);
             let args = tokens.slice(1);
             commands[command](msg, args);
         } else if (msg.author.id !== process.env.BOTUSERID) {
             respondMessage(msg, tokens);
         }
 }
+
 function getBlankChannelJson(channel) {
     let blankChannelJson = {
         "info": {
@@ -48,12 +57,12 @@ function getBlankChannelJson(channel) {
             "id":channel.id,
         },
         "settings": {
-            "fullenable": false,
-            "sentencetriggers": false,
-            "wordtriggers": false,
-            "nonepiece": false,
-            "gifs": false,
-            "lobby": false,
+            "fullenable": true,
+            "sentencetriggers": true,
+            "wordtriggers": true,
+            "nonepiece": true,
+            "gifs": true,
+            "lobby": true,
             "general":"",
             "bottest":""
         }
