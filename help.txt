@@ -9,7 +9,7 @@ Send bot test message
 c!gif {gif search terms}
 Sends a gif resulting from searching the {gif search terms}
 
-c!set
+c!set (admin only)
 Prints out settings for a channel
 c!set {setting} {true/false}
 Sets a setting for a channel

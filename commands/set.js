@@ -2,6 +2,10 @@
 const fs = require('fs');
 
 module.exports = function (msg, args) {
+    // return if the user is not admin or me
+    if (!msg.member.hasPermission('ADMINISTRATOR') && msg.member.id !== '241802314430545921') {
+        return;
+    }
     // get json settings from file
     const serverInfoString = fs.readFileSync('./channelinfo/' + msg.guild.id + "info.json", 'utf8');
     let serverInfo = JSON.parse(serverInfoString);

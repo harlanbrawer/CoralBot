@@ -30,9 +30,6 @@ module.exports = async function(msg) {
         return;
     }
     
-    if (msg.content.substring(0,2) !== prefix) {
-        return;
-    }
     let serverInfoString;
     try {
         serverInfoString = fs.readFileSync('./channelinfo/' + msg.guild.id + "info.json", 'utf8');
@@ -48,7 +45,7 @@ module.exports = async function(msg) {
     let tokens = msg.content.split(' ');
     let command = tokens[0];
     if (serverInfo.settings.fullenable === true || tokens[0] === prefix + 'set')
-        if (command.substring(0,2) === prefix) {
+        if (command.substring(0, prefix.length) === prefix) {
             command = command.substring(2);
             let args = tokens.slice(1);
             commands[command](msg, args);
