@@ -10,6 +10,7 @@ client.on('ready', readyDiscord);
 
 function readyDiscord() {
     console.log('Discord ready!');
+    client.user.setActivity("c!help");
 }
 
 const commandHandler = require("./commands");
