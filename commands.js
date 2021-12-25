@@ -24,12 +24,6 @@ let prefix = 'c!';
 // message handler
 module.exports = async function(msg) {
     console.log(msg.content);
-
-    // remove messages from art only no text
-    if (msg.guild.id === '564324748348358697' && msg.channel.id === '839600821540094082') {
-        msg.delete();
-        return;
-    }
     
     let serverInfoString;
     try {
