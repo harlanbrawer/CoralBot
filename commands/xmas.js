@@ -1,0 +1,3 @@
+module.exports = function (msg, args) {
+    msg.channel.send('Hey guys, just wanted to wish you all happy holidays. Discord is filled with ready-made messages that you don\'t even read, you just copy and paste to every server, I don\'t like that, I like writing from my heart. Our friendship, from the deepest to virtual, is very important to me and couldn\'t ever be represented by a cookie-cutter message from anywhere. So, I\'d like to thank you all, you\'re the best cowboy erotic roleplay server I\'ve ever interacted with');
+}

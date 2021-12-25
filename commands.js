@@ -13,9 +13,10 @@ const rem = remember;
 const recall = require("./commands/recall.js");
 const rec = recall;
 const help = require("./commands/help.js");
+const xmas = require("./commands/xmas.js");
 
 const commands = {
-    test, gif, set, remember, rem, recall, rec, help
+    test, gif, set, remember, rem, recall, rec, help, xmas
 };
 
 let prefix = 'c!';
